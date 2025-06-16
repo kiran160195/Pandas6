@@ -1,0 +1,15 @@
+import pandas as pd
+
+def count_rich_customers(store: pd.DataFrame) -> pd.DataFrame:
+    rich_customers = store[store['amount'] > 500]['customer_id'].nunique()
+    return pd.DataFrame({'rich_count': [rich_customers]})
+# import pandas as pd
+
+# def count_rich_customers(store: pd.DataFrame) -> pd.DataFrame:
+#     filtered = store[store['amount'] > 500]
+    
+#     unique_customers = filtered.drop_duplicates('customer_id')
+    
+#     count = len(unique_customers)
+    
+#     return pd.DataFrame({'rich_count': [count]})
